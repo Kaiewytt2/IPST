@@ -4,7 +4,7 @@ let result = [0,1];
 let current = 1;
 let prev = 1;
 
-while (current < 200){
+while (current <= 200){
     result.push(current)
     let i = current + prev
     prev = current

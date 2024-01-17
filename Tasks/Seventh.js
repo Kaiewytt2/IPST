@@ -1,7 +1,8 @@
 let month = Math.floor(Math.random() * 12) + 1
 let year = 2022
 const season = () =>{
-    if(month == 12 || month < 3){
+    if(month === 12 || month < 3)
+    {
         return 'Зима'
     }
     else if (month < 6){
