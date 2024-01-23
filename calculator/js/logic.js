@@ -1,9 +1,9 @@
 import { print } from './utils/print.js'
 
 const main = () => {
-    let currentInput = ''; // текущий введенный текст
+    let currentInput = ''; 
     let result = 0;
-    let operator = ''; // текущий оператор
+    let operator = '';
 
     const calculate = () => {
         switch (operator) {
@@ -41,33 +41,26 @@ const main = () => {
 
     return (button) => {
         if (button === 'АС') {
-            // полная очистка
             result = 0;
             currentInput = '';
             operator = '';
         } else if (button === 'С') {
-            // удаление последнего символа
             currentInput = currentInput.slice(0, -1);
         } else if (button === '=' && operator) {
-            // выполнение вычислений при нажатии на =
             calculate();
             print(result);
         } else if (['+', '-', 'x', '/'].includes(button)) {
-            // установка оператора
             if (currentInput !== '') {
                 calculate();
             }
             operator = button;
-            // вывод текущего оператора
             print(result);
             print(operator);
             return;
         } else {
-            // добавление цифр и точки
             currentInput += button;
         }
 
-        // вывод текущего ввода
         print(currentInput || result);
     };
 };
