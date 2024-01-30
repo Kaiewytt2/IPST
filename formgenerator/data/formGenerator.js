@@ -47,7 +47,6 @@ function generateFormFields(formData, formContainer) {
 
 function generateForm(formData) {
     const formContainer = document.getElementById('form-container');
-    // Очищаем контейнер перед добавлением новой формы
     formContainer.innerHTML = '';
     const form = createElement('form');
     generateFormFields(formData, form);
